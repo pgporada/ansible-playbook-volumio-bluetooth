@@ -1,0 +1,12 @@
+[Unit]
+Description=BlueAlsa-Aplay %I -dhw:1,0
+Requires=bluetooth.service bluealsa.service
+
+[Service]
+Type=simple
+User=volumio
+Group=audio
+ExecStart=/usr/bin/bluealsa-aplay %I -dhw:1,0
+
+[Install]
+WantedBy=multi-user.target

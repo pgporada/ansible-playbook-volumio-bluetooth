@@ -1,0 +1,85 @@
+---
+- name: Install packages
+  apt:
+    state: present
+    update_cache: yes
+    pkg:
+      - vim
+      - dh-autoreconf
+      - libasound2-dev
+      - libortp-dev
+      - pi-bluetooth
+      - libusb-dev
+      - libglib2.0-dev
+      - libudev-dev
+      - libical-dev
+      - libreadline-dev
+      - libsbc1
+      - libsbc-dev
+
+- name: Get bluez repository
+  git:
+    repo: 'https://git.kernel.org/pub/scm/bluetooth/bluez.git'
+    dest: /tmp/bluez
+    version: "{{ volumio_bt_bluez_version }}"
+
+- name: Get bluez-alsa repository
+  git:
+    repo: 'https://github.com/Arkq/bluez-alsa.git'
+    dest: /tmp/bluez-alsa
+    version: "{{ volumio_bt_bluez_alsa_version }}"
+    update: yes
+
+- name: Get scripts
+  copy:
+    src: "{{ item.name }}"
+    dest: "{{ item.path }}/{{ item.name }}"
+    owner: root
+    group: root
+    mode: '0755'
+  with_items:
+    - { name: 'a2dp-autoconnect.sh', path: '/home/volumio' }
+    - { name: 'compile-bluez.sh', path: '/tmp' }
+    - { name: 'compile-bluez-alsa.sh', path: '/tmp' }
+
+- name: Install unit files
+  copy:
+    src: "lib/systemd/system/{{ item }}"
+    dest: "/lib/systemd/system/{{ item }}"
+    owner: root
+    group: root
+    mode: '0644'
+  with_items:
+    - "bluealsa.service"
+    - "bluealsa-aplay@.service"
+
+- name: Enable bluealsa
+  systemd:
+    name: bluealsa.service
+    enabled: yes
+    masked: no
+
+- name: Install udev rule
+  copy:
+    src: "etc/udev/rules.d/99-input.rules"
+    dest: "/etc/udev/rules.d/99-input.rules"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Install bluetooth audio.conf
+  copy:
+    src: "etc/bluetooth/audio.conf"
+    dest: "/etc/bluetooth/audio.conf"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Configure bluetooth main.conf
+  blockinfile:
+    path: /etc/bluetooth/main.conf
+    insertafter: "[General]"
+    block: |
+      Class = 0x20041C
+      AutoEnable = true
+...
