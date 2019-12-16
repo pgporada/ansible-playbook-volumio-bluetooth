@@ -20,5 +20,24 @@ I have run several Raspberry Pi's in my home and barn. This code will provision 
 
     # Disable volumio ssh mode at http://volumio_ip/dev
 
+### Pairing a device
+This part is kind of a pain in the butt and currently must be done manually. An expect script or something might be useful for this.
+
+    sudo bluetoothctl
+    # power on
+    # agent on
+    # default-agent
+    # scan on => xx:xx of your device
+    # pair xx:xx
+    # trust xx:xx
+    # exit
+
+### Removing a device
+
+    sudo bluetoothctl
+    # devices
+    # remove xx:xx
+    # exit
+
 # References
 Much of this comes from manual steps found [here](https://forum.volumio.org/volumio-bluetooth-receiver-t8937.htm) and [here](https://www.raspberrypi.org/forums/viewtopic.php?f=38&t=247892).
