@@ -76,6 +76,16 @@
   notify:
     - Restart bluealsa
 
+- name: Compile bluez
+  command: /tmp/compile-bluez.sh
+  args:
+    creates: /tmp/.compiled-bluez
+
+- name: Compile bluezasla
+  command: /tmp/compile-bluez-alsa.sh
+  args:
+    creates: /tmp/.compiled-bluez-alsa
+
 - name: Flush all handlers immediately
   meta: flush_handlers
 ...
