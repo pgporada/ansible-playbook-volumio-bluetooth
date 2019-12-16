@@ -52,12 +52,8 @@
   with_items:
     - "bluealsa.service"
     - "bluealsa-aplay@.service"
-
-- name: Enable bluealsa
-  systemd:
-    name: bluealsa.service
-    enabled: yes
-    masked: no
+  notify:
+    - Restart bluealsa
 
 - name: Install udev rule
   copy:
@@ -67,19 +63,19 @@
     group: root
     mode: '0644'
 
-- name: Install bluetooth audio.conf
+- name: Install bluetooth configs
   copy:
-    src: "etc/bluetooth/audio.conf"
-    dest: "/etc/bluetooth/audio.conf"
+    src: "etc/bluetooth/{{ item }}"
+    dest: "/etc/bluetooth/{{ item }}"
     owner: root
     group: root
     mode: '0644'
+  with_items:
+    - "main.conf"
+    - "audio.conf"
+  notify:
+    - Restart bluealsa
 
-- name: Configure bluetooth main.conf
-  blockinfile:
-    path: /etc/bluetooth/main.conf
-    insertafter: "[General]"
-    block: |
-      Class = 0x20041C
-      AutoEnable = true
+- name: Flush all handlers immediately
+  meta: flush_handlers
 ...
