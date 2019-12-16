@@ -1,5 +1,5 @@
 ---
-- hosts: house
+- hosts: volumios
   become: True
   become_method: sudo
   vars_files:

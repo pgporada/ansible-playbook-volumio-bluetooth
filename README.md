@@ -15,3 +15,6 @@ I have run several Raspberry Pi's in my home and barn. This code will provision 
 
     # Once your user has been added, switch to the new inventory
     ansible-playbook playbook.yml -i hosts -K
+
+# References
+Much of this comes from manual steps found [here](https://forum.volumio.org/volumio-bluetooth-receiver-t8937.htm) and [here](https://www.raspberrypi.org/forums/viewtopic.php?f=38&t=247892).
