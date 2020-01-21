@@ -40,4 +40,4 @@ This part is done on the Volumio server itself and is kind of a pain in the butt
 If you're like me, you may have a web radio playing constantly from Volumio. When you connect your phone to bluetooth on the rpi, you may not hear anything until you pause the web radio in the Volumio interface. The interface will control the volume, but will not show that anything is "streaming" from your phone.
 
 # References
-Much of this comes from manual steps found [here](https://forum.volumio.org/volumio-bluetooth-receiver-t8937.htm) and [here](https://www.raspberrypi.org/forums/viewtopic.php?f=38&t=247892).
+Much of this comes from manual steps found [here](https://forum.volumio.org/volumio-bluetooth-receiver-t8937.html) and [here](https://www.raspberrypi.org/forums/viewtopic.php?f=38&t=247892).
