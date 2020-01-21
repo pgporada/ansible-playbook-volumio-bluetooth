@@ -15,7 +15,7 @@ I run [Volumio](https://volumio.org/) on several Raspberry Pi's in my home and b
     # Disable volumio ssh mode at http://volumio_ip/dev
 
 ### Pairing a device
-This part is kind of a pain in the butt and currently must be done manually. An expect script or something might be useful for this.
+This part is done on the Volumio server itself and is kind of a pain in the butt. An expect script or something might be useful for this as a future improvement. This only needs to be done once per phone per Volumio server.
 
     sudo bluetoothctl
     # power on
@@ -24,6 +24,7 @@ This part is kind of a pain in the butt and currently must be done manually. An 
     # scan on => xx:xx of your device
     # pair xx:xx
     # trust xx:xx
+    # devices
     # exit
 
 ### Removing a device
