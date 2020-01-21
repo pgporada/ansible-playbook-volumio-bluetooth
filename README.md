@@ -7,16 +7,7 @@ I run [Volumio](https://volumio.org/) on several Raspberry Pi's in my home and b
 
     # Temporarily enable ssh mode at http://volumio_ip/dev
 
-    ansible-galaxy install -r requirements.yml
-
-    # This will fail shortly after adding the users, that's fine
-    ansible-playbook playbook.yml -i hosts_prep
-
-    # Resume with the new password
-    ansible-playbook playbook.yml -i hosts_prep -kK
-
-    # Once your user has been added, switch to the new inventory
-    ansible-playbook playbook.yml -i hosts -K
+    ansible-playbook playbook.yml -i hosts.example -kK
 
     # Disable volumio ssh mode at http://volumio_ip/dev
 

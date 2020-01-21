@@ -5,7 +5,5 @@
   vars_files:
     - defaults/main.yaml
   roles:
-    - singleplatform-eng.users
-    - pgporada.vim
     - roles/ansible-role-volumio-bluetooth
 ...
