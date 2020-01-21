@@ -8,8 +8,16 @@ I run [Volumio](https://volumio.org/) on several Raspberry Pi's in my home and b
     # Temporarily enable ssh mode at http://volumio_ip/dev
 
     # On your own computer, not necessarily the raspberry pi, you can run
+    sudo apt install ansible git
+
+    # Get this repository onto your computer
     git clone https://github.com/pgporada/ansible-playbook-volumio-bluetooth
+
+    # Configure the Volumio server IP so that you're connecting to the correct device
     cd ansible-playbook-volumio-bluetooth
+    vim hosts.example
+
+    # Run ansible from your computer to configure the Volumio server
     ansible-playbook playbook.yml -i hosts.example -kK
 
     # Disable volumio ssh mode at http://volumio_ip/dev
