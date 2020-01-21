@@ -33,5 +33,10 @@ This part is kind of a pain in the butt and currently must be done manually. An 
     # remove xx:xx
     # exit
 
+### Troubleshooting
+
+#### I have paired my phone to the raspberry pi, but I can't hear any audio!
+If you're like me, you may have a web radio playing constantly from Volumio. When you connect your phone to bluetooth on the rpi, you may not hear anything until you pause the web radio in the Volumio interface. The interface will control the volume, but will not show that anything is "streaming" from your phone.
+
 # References
 Much of this comes from manual steps found [here](https://forum.volumio.org/volumio-bluetooth-receiver-t8937.htm) and [here](https://www.raspberrypi.org/forums/viewtopic.php?f=38&t=247892).
