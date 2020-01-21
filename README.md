@@ -7,6 +7,9 @@ I run [Volumio](https://volumio.org/) on several Raspberry Pi's in my home and b
 
     # Temporarily enable ssh mode at http://volumio_ip/dev
 
+    # On your own computer, not necessarily the raspberry pi, you can run
+    git clone https://github.com/pgporada/ansible-playbook-volumio-bluetooth
+    cd ansible-playbook-volumio-bluetooth
     ansible-playbook playbook.yml -i hosts.example -kK
 
     # Disable volumio ssh mode at http://volumio_ip/dev
