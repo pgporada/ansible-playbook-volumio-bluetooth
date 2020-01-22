@@ -1,4 +1,4 @@
 hosts
 hosts_prep
 *.retry
-defaults/main.yaml
+defaults/main.yaml.mine
