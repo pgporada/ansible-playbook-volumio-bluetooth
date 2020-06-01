@@ -1,5 +1,7 @@
 [volumios]
 192.168.1.100
+
+[volumios:vars]
 ansible_connection=ssh
 ansible_user=volumio
 ansible_ssh_pass=volumio
