@@ -3,8 +3,13 @@
   apt:
     state: present
     update_cache: yes
+    install_recommends: yes
     pkg:
       - vim
+      - binutils
+      - dpkg-dev
+      - libtool
+      - debhelper
       - dh-autoreconf
       - libasound2-dev
       - libortp-dev
