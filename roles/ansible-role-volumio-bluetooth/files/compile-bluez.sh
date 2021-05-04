@@ -5,6 +5,7 @@ cd /tmp/bluez
 make
 make install
 
-sudo ln -s /usr/local/lib/libbluetooth.so.3.19.0 /usr/lib/arm-linux-gnueabihf/libbluetooth.so
-sudo ln -s /usr/local/lib/libbluetooth.so.3.19.0 /usr/lib/arm-linux-gnueabihf/libbluetooth.so.3
-sudo ln -s /usr/local/lib/libbluetooth.so.3.19.0 /usr/lib/arm-linux-gnueabihf/libbluetooth.so.3.19.0
+find /usr/lib/arm-linux-gnueabihf -name 'libbluetooth.so*' -exec sudo unlink {} \;
+sudo ln -s /usr/local/lib/libbluetooth.so.3.19.5 /usr/lib/arm-linux-gnueabihf/libbluetooth.so
+sudo ln -s /usr/local/lib/libbluetooth.so.3.19.5 /usr/lib/arm-linux-gnueabihf/libbluetooth.so.3
+sudo ln -s /usr/local/lib/libbluetooth.so.3.19.5 /usr/lib/arm-linux-gnueabihf/libbluetooth.so.3.19.5
