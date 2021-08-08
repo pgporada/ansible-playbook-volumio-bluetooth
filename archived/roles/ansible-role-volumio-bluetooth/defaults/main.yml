@@ -1,0 +1,4 @@
+---
+volumio_bt_bluez_version: '5.58'
+volumio_bt_bluez_alsa_version: 'master'
+...

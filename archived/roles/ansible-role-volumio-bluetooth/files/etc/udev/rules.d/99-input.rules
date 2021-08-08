@@ -1,0 +1,1 @@
+KERNEL=="input[0-9]*", RUN+="/home/volumio/a2dp-autoconnect.sh"

@@ -1,3 +1,7 @@
+# You don't need this project, nor do you need Volumio
+
+Switch to [Moode Audio](https://moodeaudio.org/) which is based on Debian latest, won't break when you run an apt update, and has built in bluetooth support. I've moved all my volumio pi's over to it including the one in the image below.
+
 # Overview
 I run [Volumio](https://volumio.org/) on several Raspberry Pi's in my home and barn. This code will provision them to accept bluetooth connections and allow me to pair a phone and stream audio to them. Volumio offers this feature, but only if you pay $35+ per year for a single RPi. For some that may be acceptable, but we can put that money towards the ~mortgage~ **beer** instead!
 

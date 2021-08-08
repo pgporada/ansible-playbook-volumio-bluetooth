@@ -1,0 +1,9 @@
+---
+- hosts: volumios
+  become: True
+  become_method: sudo
+  vars_files:
+    - defaults/main.yaml
+  roles:
+    - roles/ansible-role-volumio-bluetooth
+...
